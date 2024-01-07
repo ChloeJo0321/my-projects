@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    background: #262a2f;
+}
+
+.container {
+    background: #fff;
+    width: 300px;
+    min-height: 20vh;
+    /* margin: 0 auto;
+    margin-top: 200px; */
+    border-radius: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    border: 1px solid rgb(24, 124, 229);
+}
+
+.container input:hover {
+    border: 1px solid rgb(181, 24, 229);
+}
+
+.container button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+    background: #494eea;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+
+
+#qr-container {
+    width: 100px;
+    /* hide the image by setting the max height at 0 */
+    max-height: 0px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+#qr-container img {
+    width: 100%;
+    padding: 10px;
+}
+
+/*Applying this style with the class name display-img added */
+#qr-container.display-img {
+    max-height: 200px;
+    margin: 10px auto;
+    border-radius: 10px;
+    border: 1px solid #d1d1d1;
+}
+
+.error {
+    animation: shake 0.1s linear 10;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-2px);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    75% {
+        transform: translateX(2px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

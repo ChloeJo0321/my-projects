@@ -1,0 +1,51 @@
+<!-- Jan. 06, 2024: Toast Notification -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast Notification</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b83e458db2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="buttons">
+        <button onclick="showToast(successMsg)">Success</button>
+        <button onclick="showToast(errorMsg)">Error</button>
+        <button onclick="showToast(invalidMsg)">Invalid</button>
+    </div>
+    <div id="toastBox"></div>
+    <script>
+        let successMsg = "<i class='fa-solid fa-circle-check'></i>Successfully submitted";
+        let errorMsg = "<i class='fa-solid fa-circle-xmark'></i>Error!";
+        let invalidMsg = "<i class='fa-solid fa-circle-exclamation'></i>Invalid!";
+        const toastBox = document.getElementById("toastBox");
+
+        function showToast(msg) {
+            let toast = document.createElement("div");
+            // let dismiss = document.createElement("button");
+            // dismiss.innerHTML = "Dismiss";
+            // toast.appendChild(dismiss);
+            toast.classList.add("toast");
+            toast.innerHTML = msg;
+            toastBox.appendChild(toast);
+
+            if (msg.includes("Error")) {
+                toast.classList.add("error");
+            }
+            if (msg.includes("Invalid")) {
+                toast.classList.add("invalid");
+            }
+
+            setTimeout(() => {
+                // element 자체를 삭제하기
+                toast.remove();
+            }, 5000);
+        }
+    </script>
+</body>
+
+</html>
